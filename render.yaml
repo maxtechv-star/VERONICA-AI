@@ -1,4 +1,3 @@
-
 services:
   - type: web
     name: xstro-pair
@@ -10,4 +9,4 @@ services:
       - key: NODE_ENV
         value: production
       - key: NODE_VERSION
-        value: 18.18.0
+        value: 20.18.0
