@@ -2,7 +2,6 @@
 import * as baileys from 'baileys';
 import fs from 'fs-extra';
 import pino from 'pino';
-import cors from 'cors';
 import express from 'express';
 import NodeCache from 'node-cache';
 import { Boom } from '@hapi/boom';
@@ -25,9 +24,9 @@ app.use((req, res, next) => {
 	next();
 });
 
-app.use(cors());
 app.use(express.json());
-app.use(express.static(join(dirname(fileURLToPath(import.meta.url)), '.')));
+// Serve static files from public folder
+app.use(express.static(join(dirname(fileURLToPath(import.meta.url)), 'public')));
 
 let PORT = process.env.PORT || 8000;
 let message = `
@@ -53,9 +52,9 @@ function generateAccessKey() {
 	return `XSTRO_${r1}_${r2}_${r3}`;
 }
 
-// Serve HTML page
+// Serve HTML page from public folder
 app.get('/', (req, res) => {
-    res.sendFile(join(__dirname, 'index.html'));
+    res.sendFile(join(__dirname, 'public', 'index.html'));
 });
 
 // Pair endpoint
