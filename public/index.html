@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Xstro Pair</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+		<style>
+			:root {
+				--bg-primary: #0a0a0a;
+				--bg-secondary: #1a1a1a;
+				--accent-color: #008f5a;
+				--text-primary: #f0f0f0;
+				--text-secondary: #a0a0a0;
+			}
+
+			body {
+				background: 
+                linear-gradient(135deg, rgba(0, 230, 118, 0.1) 0%, transparent 70%),
+                url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"%3E%3Cg fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.1"%3E%3Cpath opacity=".5" d="M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+            background-color: var(--bg-primary);
+            font-family: 'Poppins', monospace;
+            color: var(--text-primary);
+            overflow-x: hidden;
+			}
+
+			.card {
+				background-color: var(--bg-secondary);
+				border-radius: 16px;
+				box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				transition: all 0.3s ease;
+			}
+
+			h1.accent {
+				color: var(--text-primary);
+				font-weight: 800;
+				letter-spacing: -1px;
+			}
+
+			.form-control {
+				background-color: var(--bg-primary) !important;
+				color: #fff !important;
+				border: 1px solid rgba(255, 255, 255, 0.1) !important;
+				border-radius: 20px;
+				font-family: 'Fira Code', monospace;
+				padding-left: 2.5rem;
+			}
+
+			.form-control::placeholder {
+				color: #fff !important;
+				opacity: 0.6;
+			}
+
+			.form-control:focus {
+				outline: none;
+				box-shadow: none;
+			}
+
+			.input-group-text {
+				position: absolute;
+				left: 1rem;
+				top: 50%;
+				transform: translateY(-50%);
+				color: #fff;
+				border: none;
+				background: transparent;
+				font-size: 1.2rem;
+				z-index: 10;
+			}
+
+			.btn-custom {
+				background-color: var(--accent-color);
+				color: var(--bg-primary);
+				font-weight: 600;
+				border: none;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+				transition: all 0.3s ease;
+			}
+			.btn-custom:hover {
+				color: var(--text-primary);
+				box-shadow: 0 5px 15px rgba(0, 143, 90, 0.4);
+				transform: translateY(-2px);
+			}
+			.btn-custom:active {
+				transform: scale(0.98);
+			}
+			.btn-custom:disabled {
+				background-color: var(--text-secondary);
+				cursor: not-allowed;
+				transform: none;
+			}
+
+			.loading-spinner {
+				display: none;
+				width: 30px;
+				height: 30px;
+				border: 3px solid transparent;
+				border-top: 3px solid var(--accent-color);
+				border-radius: 50%;
+				animation: spin 1s linear infinite;
+				margin: 0 auto;
+			}
+
+			@keyframes spin {
+				0% { transform: rotate(0deg); }
+				100% { transform: rotate(360deg); }
+			}
+
+			#status-message {
+				font-size: 1.1rem;
+				font-weight: 700;
+				white-space: pre-line;
+				word-break: break-all;
+				min-height: 60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container d-flex flex-column justify-content-center align-items-center vh-100">
+			<div class="card p-4 text-center shadow-lg border-0 w-100" style="max-width: 400px">
+				<h1 class="accent mb-3">Xstro Pair</h1>
+				<p class="mb-4 text-secondary">Enter your phone number to generate a pairing code</p>
+
+				<div class="input-group mb-3 position-relative">
+					<span class="input-group-text">+</span>
+					<input type="tel" id="phone-number" class="form-control ps-5" placeholder="256 123 456 789" maxlength="15" />
+				</div>
+
+				<button id="pair-btn" class="btn btn-custom w-100 py-2 fw-bold">Get Code</button>
+
+				<div class="mt-3 text-center">
+					<div class="loading-spinner" id="loading-spinner"></div>
+					<p id="status-message" class="mt-2"></p>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			const pairBtn = document.getElementById('pair-btn');
+			const statusMessage = document.getElementById('status-message');
+			const loadingSpinner = document.getElementById('loading-spinner');
+			const phoneNumberInput = document.getElementById('phone-number');
+
+			// Auto-format phone number
+			phoneNumberInput.addEventListener('input', () => {
+				let inputVal = phoneNumberInput.value.replace(/\D/g, '');
+				inputVal = inputVal.slice(0, 12);
+				
+				let formattedNumber = inputVal;
+				if (inputVal.length > 3) {
+					formattedNumber = inputVal.replace(/(\d{3})(\d{3})/, '$1 $2');
+				}
+				if (inputVal.length > 6) {
+					formattedNumber = inputVal.replace(/(\d{3})(\d{3})(\d{3})/, '$1 $2 $3');
+				}
+				if (inputVal.length > 9) {
+					formattedNumber = inputVal.replace(/(\d{3})(\d{3})(\d{3})(\d+)/, '$1 $2 $3 $4');
+				}
+				
+				phoneNumberInput.value = formattedNumber.trim();
+			});
+
+			pairBtn.addEventListener('click', async () => {
+				const phoneNumber = phoneNumberInput.value.replace(/\s/g, '');
+				
+				if (!phoneNumber || phoneNumber.length < 10) {
+					showStatus('Please enter a valid phone number (min 10 digits)', 'error');
+					return;
+				}
+
+				loadingSpinner.style.display = 'block';
+				pairBtn.disabled = true;
+				showStatus('Requesting pairing code...', 'loading');
+
+				try {
+					const response = await fetch(`/pair?phone=${cleanNumber(phoneNumber)}`);
+					const data = await response.json();
+					
+					loadingSpinner.style.display = 'none';
+					pairBtn.disabled = false;
+					
+					if (data.error) {
+						showStatus(`Error: ${data.error}`, 'error');
+					} else {
+						showStatus(`Pairing Code: ${data.code}`, 'success');
+					}
+				} catch (error) {
+					loadingSpinner.style.display = 'none';
+					pairBtn.disabled = false;
+					showStatus('Failed to connect to server. Please try again.', 'error');
+					console.error('Fetch error:', error);
+				}
+			});
+
+			phoneNumberInput.addEventListener('keypress', (e) => {
+				if (e.key === 'Enter') {
+					pairBtn.click();
+				}
+			});
+
+			function cleanNumber(number) {
+				return number.replace(/[+\s]/g, '');
+			}
+
+			function showStatus(message, type) {
+				statusMessage.textContent = message;
+				switch(type) {
+					case 'success':
+						statusMessage.style.color = 'var(--accent-color)';
+						break;
+					case 'error':
+						statusMessage.style.color = '#ff4444';
+						break;
+					case 'loading':
+						statusMessage.style.color = 'var(--text-secondary)';
+						break;
+					default:
+						statusMessage.style.color = 'var(--text-primary)';
+				}
+			}
+		</script>
+	</body>
+</html>
