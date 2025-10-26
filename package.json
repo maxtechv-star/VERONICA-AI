@@ -1,4 +1,3 @@
-
 {
 	"name": "baileys-pair",
 	"version": "1.0.0",
@@ -7,8 +6,7 @@
 	"type": "module",
 	"scripts": {
 		"start": "node server.js",
-		"build": "yarn install",
-		"dev": "node server.js"
+		"build": "npm install"
 	},
 	"author": "AstroX11",
 	"license": "MIT",
@@ -26,6 +24,5 @@
 	},
 	"engines": {
 		"node": ">=18.0.0"
-	},
-	"packageManager": "yarn@1.22.22"
+	}
 }
