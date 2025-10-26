@@ -1,29 +1,22 @@
+
 FROM node:18-alpine
 
 WORKDIR /app
 
-# Install dependencies for sqlite3 and other native modules
-RUN apk add --no-cache \
-    python3 \
-    make \
-    g++ \
-    sqlite
-
-# Install yarn
-RUN npm install -g yarn
+# Install dependencies for sqlite3
+RUN apk add --no-cache python3 make g++ sqlite
 
 # Copy package files
 COPY package*.json ./
-COPY yarn.lock ./
 
-# Install dependencies using yarn
-RUN yarn install --production
+# Install dependencies
+RUN npm install --production
 
 # Copy source code
 COPY . .
 
-# Create uploads directory
-RUN mkdir -p uploads
+# Create necessary directories
+RUN mkdir -p public uploads
 
 # Expose port
 EXPOSE 8000
