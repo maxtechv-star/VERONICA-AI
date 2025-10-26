@@ -9,11 +9,15 @@ RUN apk add --no-cache \
     g++ \
     sqlite
 
+# Install yarn
+RUN npm install -g yarn
+
 # Copy package files
 COPY package*.json ./
+COPY yarn.lock ./
 
-# Install dependencies
-RUN npm install --production
+# Install dependencies using yarn
+RUN yarn install --production
 
 # Copy source code
 COPY . .
