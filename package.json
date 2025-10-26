@@ -1,24 +1,28 @@
-FROM node:18-alpine
 
-WORKDIR /app
-
-# Install dependencies for sqlite3
-RUN apk add --no-cache python3 make g++ sqlite
-
-# Copy package files
-COPY package*.json ./
-
-# Install dependencies
-RUN npm install --production
-
-# Copy source code
-COPY . .
-
-# Create uploads directory
-RUN mkdir -p uploads
-
-# Expose port
-EXPOSE 8000
-
-# Start the application
-CMD ["npm", "start"]
+{
+	"name": "baileys-pair",
+	"version": "1.0.0",
+	"description": "baileys session",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"start": "node server.js",
+		"build": "npm install"
+	},
+	"author": "AstroX11",
+	"license": "MIT",
+	"dependencies": {
+		"@hapi/boom": "^10.0.1",
+		"baileys": "^7.0.0-rc.2",
+		"dotenv": "^16.4.5",
+		"express": "^4.18.2",
+		"fs-extra": "^11.2.0",
+		"node-cache": "^5.1.2",
+		"pino": "^8.15.1",
+		"sequelize": "^6.37.5",
+		"sqlite3": "^5.1.7"
+	},
+	"engines": {
+		"node": ">=18.0.0"
+	}
+}
