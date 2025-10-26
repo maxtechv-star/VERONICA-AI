@@ -3,7 +3,7 @@ services:
     name: xstro-pair
     env: node
     plan: free
-    buildCommand: npm install
+    buildCommand: yarn install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
